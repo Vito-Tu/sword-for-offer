@@ -5,16 +5,26 @@ class TreeNode:
         self.left = None
         self.right = None
 class Solution:
-    def isSymmetricalCore(self, pRoot1, pRoot2):
-        if pRoot1 == None and pRoot2 == None:
-            return True
-        if pRoot1 == None or pRoot2 == None:
-            return False
-        if pRoot1.val != pRoot2.val:
-            return False
-        return self.isSymmetricalCore(pRoot1.left,pRoot2.right) and self.isSymmetricalCore(pRoot1.right, pRoot2.left)
-    def isSymmetrical(self, pRoot):
-        return self.isSymmetricalCore(pRoot, pRoot)
+    def __init__(self):
+        self.m_data = []
+        self.m_min = []
+    def push(self, node):
+        self.m_data.append(node)
+        if len(self.m_min) == 0 or node < self.m_min[-1]:
+            self.m_min.append(node)
+        else:
+            self.m_min.append(self.m_min[-1])
+    def pop(self):
+        if len(self.m_min) > 0 and len(self.m_data) > 0:
+            self.m_data.pop(-1)
+            self.m_min.pop(-1)
+        else:
+            assert Exception("data is empty")
+    def top(self):
+        return self.m_data[-1]
+    def min(self):
+        return self.m_min[-1]
+
 
 
                 
