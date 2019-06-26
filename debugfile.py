@@ -9,28 +9,29 @@ class RandomListNode:
         self.next = None
         self.random = None
 class Solution:
-    def Serialize(self, root):
-        """递归的前序遍历二叉树，遇空节点使用特殊字符代替"""
+    def PermutationCore(self, ss, i):
         result = []
-        if root == None:
-            result.append(None)
+        if i >= len(ss) - 1:
+            result.append(''.join(ss))
             return result
-        result.append(root.val)
-        result = result + (self.Serialize(root.left))
-        result = result + (self.Serialize(root.right))
+        else:
+            for j in range(i, len(ss)):
+                if ss[j] == ss[i] and j != i:
+                    # 防止输入中有重复字符
+                    continue
+                temp = ss[j]
+                ss[j] = ss[i]
+                ss[i] = temp
+                result = result + self.PermutationCore(ss, i+1)
+                temp = ss[j]
+                ss[j] = ss[i]
+                ss[i] = temp
         return result
 
-    def Deserialize(self, s):
-        """递归的读取序列生成节点"""
-        if not s:
-            return None
-        value = s.pop(0)
-        pRoot = None
-        if value:
-            pRoot = TreeNode(value)
-            pRoot.left = self.Deserialize(s)
-            pRoot.right = self.Deserialize(s)
-        return pRoot
+    def Permutation(self, ss):
+        if not ss:
+            return ''
+        return self.PermutationCore(list(ss), 0)
 # test code
 pRoot = TreeNode(10)
 pRoot.left = TreeNode(6)
@@ -41,5 +42,5 @@ pRoot.right.left = TreeNode(12)
 pRoot.right.right = TreeNode(16)
 a = Solution()
 # pRoot = [4,6,7,5]
-print(a.Convert(pRoot))
+print(a.Permutation('abc'))
                 
