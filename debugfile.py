@@ -9,21 +9,30 @@ class RandomListNode:
         self.next = None
         self.random = None
 
-
 class Solution:
-    """解法二：时间复杂度为O(nlogK)的算法，适合用来处理海量数据"""
-    def GetLeastNumbers_Solution(self, tinput, k):
-        if not tinput or len(tinput) < k:
-            return
-        result = []
-        for i in tinput:
-            if len(result) < k:
-                result.append(i)
-            else:
-                result.sort()
-                if i < result[-1]:
-                    result[-1] = i
-        return sorted(result)
+    def NumberOf1(self,strN):
+        """递归的计算含有1的数量"""
+        if not strN:
+            return 0
+        first = ord(strN[0]) - ord('0')
+        length = len(strN)
+        if length == 1 and first == 0:
+            return 0
+        if length == 1 and first > 0:
+            return 1
+        numFirstDigit = 0
+        if first > 1:
+            numFirstDigit = pow(10, length - 1)
+        elif first == 1:
+            numFirstDigit = int(''.join(strN[1:])) + 1
+        numOtherDigts = first*(length - 1)*pow(10, length - 2)
+        numRecursive = self.NumberOf1(strN[1:])
+        return numFirstDigit + numOtherDigts + numRecursive
+    def NumberOf1Between1AndN_Solution(self, n):
+        if n <= 0:
+            return 0
+        return self.NumberOf1(list(str(n)))
+
 # test code
 # pRoot = TreeNode(10)
 # pRoot.left = TreeNode(6)
@@ -34,5 +43,7 @@ class Solution:
 # pRoot.right.right = TreeNode(16)
 a = Solution()
 # pRoot = [4,6,7,5]
-print(a.GetLeastNumbers_Solution([4,5,1,6,2,7,3,8], 8))
-                
+data = [5,2,3,4,1,6,7,0,8]
+for i in data:
+    a.Insert(i)
+    print(a.GetMedian())
