@@ -10,32 +10,32 @@ class RandomListNode:
         self.random = None
 
 class Solution:
-    def beginNumber(self, digits):
-        if digits == 1:
+    """定义一种新的比较大小数字大小的方法，使用该方法对数组进行排序，同时考虑大数问题"""
+    def GetTranslationCount(self,number):
+        if number < 0:
             return 0
-        return pow(10, digits - 1)
-    def digitsAtIndex(self,index, digits):
-        number = self.beginNumber(digits) + index / digits
-        indexFromRight = digits - index % digits
-        for i in range(1,indexFromRight):
-            number /= 10
-        return int(number % 10)
-    def countOfIntegers(self, digits):
-        if digits == 1:
-            return 10
-        count = pow(10, digits - 1)
-        return 9*count
-    def digitsAtIndex_main(self, index):
-        if index < 0:
-            return -1
-        digits = 1
-        while True:
-            number = self.countOfIntegers(digits)
-            if index < number * digits:
-                return self.digitsAtIndex(index, digits)
-            index -= digits * number
-            digits += 1
-        return -1
+        strNumber = str(number)
+        length = len(strNumber)
+        counts = [None] * length
+        count = 0
+        for i in range(length - 1, -1, -1):
+            count = 0
+            if i < length - 1:
+                count = counts[i+1]
+            else:
+                count = 1
+            if i < length - 1:
+                digit1 = ord(strNumber[i]) - ord('0')
+                digit2 = ord(strNumber[i+1]) - ord('0')
+                converted = digit1 * 10 + digit2
+                if converted >= 10 and converted <= 25:
+                    if i < length - 2:
+                        count += counts[i+2]
+                    else:
+                        count += 1
+            counts[i] = count
+        return count
+
 
 # test code
 # pRoot = TreeNode(10)
@@ -47,5 +47,5 @@ class Solution:
 # pRoot.right.right = TreeNode(16)
 a = Solution()
 # pRoot = [4,6,7,5]
-data = -1
-print(a.digitsAtIndex_main(data))
+data = 26
+print(a.GetTranslationCount(data))

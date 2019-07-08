@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fc3f8c76-811a-4db2-ba03-70261a1f132e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.ipynb_checkpoints/python_sword_for_offer-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/.ipynb_checkpoints/python_sword_for_offer-checkpoint.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/debugfile.py" beforeDir="false" afterPath="$PROJECT_DIR$/debugfile.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python_sword_for_offer.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/python_sword_for_offer.ipynb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,17 +18,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/debugfile.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="38">
-              <caret line="11" selection-start-line="11" selection-end-line="37" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/.conda/envs/tensorflow/lib/python3.6/random.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3610">
-              <caret line="198" selection-start-line="198" selection-end-line="198" />
+            <state relative-caret-position="171">
+              <caret line="13" column="37" selection-start-line="13" selection-start-column="37" selection-end-line="13" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -170,7 +164,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.30119178" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.30119178" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39761648" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -196,17 +190,17 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/debugfile.py">
+    <entry file="file://$USER_HOME$/.conda/envs/tensorflow/lib/python3.6/random.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="11" selection-start-line="11" selection-end-line="37" selection-end-column="17" />
+        <state relative-caret-position="555">
+          <caret line="198" selection-start-line="198" selection-end-line="198" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/.conda/envs/tensorflow/lib/python3.6/random.py">
+    <entry file="file://$PROJECT_DIR$/debugfile.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3610">
-          <caret line="198" selection-start-line="198" selection-end-line="198" />
+        <state relative-caret-position="171">
+          <caret line="13" column="37" selection-start-line="13" selection-start-column="37" selection-end-line="13" selection-end-column="37" />
         </state>
       </provider>
     </entry>
