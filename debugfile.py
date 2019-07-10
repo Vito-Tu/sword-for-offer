@@ -10,9 +10,8 @@ class RandomListNode:
         self.random = None
 
 class Solution:
-    def GetUglyNumber_Solution(self, index):
+    def InversePairs(self, data):
         pass
-    
 # test code
 # pRoot = TreeNode(10)
 # pRoot.left = TreeNode(6)
@@ -23,5 +22,7 @@ class Solution:
 # pRoot.right.right = TreeNode(16)
 a = Solution()
 # pRoot = [4,6,7,5]
-data = 'arabcacfr'
-print(a.longestSubstringWithoutDuplication(data))
+data = 'abaccdebff'
+for i in range(len(data)):
+    a.Insert(data[i])
+    print(a.FirstAppearingOnce())
