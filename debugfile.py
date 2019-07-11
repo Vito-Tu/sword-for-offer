@@ -3,14 +3,13 @@ class TreeNode:
         self.val = x
         self.left = None
         self.right = None
-class RandomListNode:
+class ListNode:
     def __init__(self, x):
-        self.label = x
+        self.val = x
         self.next = None
-        self.random = None
 
 class Solution:
-    def InversePairs(self, data):
+    def FindFirstCommonNode(self, pHead1, pHead2):
         pass
 # test code
 # pRoot = TreeNode(10)
@@ -22,7 +21,6 @@ class Solution:
 # pRoot.right.right = TreeNode(16)
 a = Solution()
 # pRoot = [4,6,7,5]
-data = 'abaccdebff'
-for i in range(len(data)):
-    a.Insert(data[i])
-    print(a.FirstAppearingOnce())
+data = [7,5,6,4]
+print(a.InversePairs(data))
+print(data)
