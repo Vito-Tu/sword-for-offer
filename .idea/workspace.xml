@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fc3f8c76-811a-4db2-ba03-70261a1f132e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.ipynb_checkpoints/python_sword_for_offer-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/.ipynb_checkpoints/python_sword_for_offer-checkpoint.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/debugfile.py" beforeDir="false" afterPath="$PROJECT_DIR$/debugfile.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/python_sword_for_offer.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/python_sword_for_offer.ipynb" afterDir="false" />
     </list>
@@ -16,8 +17,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/debugfile.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+            <state relative-caret-position="190">
+              <caret line="10" selection-start-line="10" selection-end-line="48" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -186,8 +187,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/debugfile.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+        <state relative-caret-position="190">
+          <caret line="10" selection-start-line="10" selection-end-line="48" selection-end-column="21" />
         </state>
       </provider>
     </entry>
