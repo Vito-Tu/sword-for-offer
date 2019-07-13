@@ -9,54 +9,20 @@ class ListNode:
         self.next = None
 
 class Solution:
-    def GetFirstK(self,data, k, start, end):
-        if start > end:
-            return -1
-        middleIndex = (start + end) // 2
-        middleData = data[middleIndex]
-        if middleData == k:
-            if (middleIndex > 0 and data[middleIndex - 1] != k) or middleIndex == 0:
-                return middleIndex
-            else:
-                end = middleIndex - 1
-        elif middleData > k:
-            end = middleIndex - 1
-        else:
-            start = middleIndex + 1
-        return self.GetFirstK(data, k, start, end)
-    def GetLastK(self, data, k, start, end):
-        if start > end:
-            return -1
-        middleIndex = (start + end) // 2
-        middleData = data[middleIndex]
-        if middleData == k:
-            if (middleIndex < len(data) - 1 and data[middleIndex + 1] != k) or middleIndex == len(data) - 1:
-                return middleIndex
-            else:
-                start = middleIndex + 1
-        elif middleData < k:
-            start = middleIndex + 1
-        else:
-            end = middleIndex - 1
-        return self.GetLastK(data, k, start, end)
-    def GetNumberOfK(self, data, k):
-        number = 0
-        if data:
-            first = self.GetFirstK(data, k, 0, len(data) - 1)
-            last = self.GetLastK(data, k, 0, len(data) - 1)
-            if first > -1 and last > -1:
-                number = last - first + 1
-        return number
+    def TreeDepth(self, pRoot):
+        if pRoot == None:
+            return 0
+        nLeft = self.TreeDepth(pRoot.left)
+        nRight = self.TreeDepth(pRoot.right)
+        return nLeft + 1 if nLeft > nRight else nRight + 1
 # test code
-# pRoot = TreeNode(10)
-# pRoot.left = TreeNode(6)
-# pRoot.right = TreeNode(14)
-# pRoot.left.left = TreeNode(4)
-# pRoot.left.right = TreeNode(8)
-# pRoot.right.left = TreeNode(12)
-# pRoot.right.right = TreeNode(16)
+pRoot = TreeNode(5)
+pRoot.left = TreeNode(3)
+pRoot.right = TreeNode(7)
+pRoot.left.left = TreeNode(2)
+pRoot.left.right = TreeNode(4)
+pRoot.right.left = TreeNode(6)
+pRoot.right.right = TreeNode(8)
 a = Solution()
-# pRoot = [4,6,7,5]
-data = [7,5,6,4]
-print(a.InversePairs(data))
-print(data)
+data = [-3,-3,1,3,5]
+print(a.TreeDepth(pRoot))
