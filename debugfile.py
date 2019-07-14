@@ -9,12 +9,20 @@ class ListNode:
         self.next = None
 
 class Solution:
-    def TreeDepth(self, pRoot):
-        if pRoot == None:
-            return 0
-        nLeft = self.TreeDepth(pRoot.left)
-        nRight = self.TreeDepth(pRoot.right)
-        return nLeft + 1 if nLeft > nRight else nRight + 1
+    def IsBalancedCroe(self, pRoot, pDepth):
+        if not pRoot:
+            pDepth[0] = 0
+            return True
+        left, right = [None], [None]
+        if self.IsBalancedCroe(pRoot.left, left) and self.IsBalancedCroe(pRoot.right, right):
+            diff = left - right
+            if diff <= 1 and diff >= -1:
+                pDepth[0] = 1 + (left[0] if left[0] > right[0] else right[0])
+                return True
+        return False
+    def IsBalanced_Solution(self, pRoot):
+        depth = [None]
+        return self.IsBalancedCroe(pRoot, depth)
 # test code
 pRoot = TreeNode(5)
 pRoot.left = TreeNode(3)
