@@ -9,28 +9,37 @@ class ListNode:
         self.next = None
 
 class Solution:
-    def IsBalancedCroe(self, pRoot, pDepth):
-        if not pRoot:
-            pDepth[0] = 0
-            return True
-        left, right = [None], [None]
-        if self.IsBalancedCroe(pRoot.left, left) and self.IsBalancedCroe(pRoot.right, right):
-            diff = left - right
-            if diff <= 1 and diff >= -1:
-                pDepth[0] = 1 + (left[0] if left[0] > right[0] else right[0])
-                return True
-        return False
-    def IsBalanced_Solution(self, pRoot):
-        depth = [None]
-        return self.IsBalancedCroe(pRoot, depth)
+    def Reverse(self,data, pBegin, pEnd):
+        if not data:
+            raise Exception("输入数据为空")
+        while pBegin < pEnd and pEnd < len(data):
+            temp = data[pBegin]
+            data[pBegin] = data[pEnd]
+            data[pEnd] = temp
+            pBegin += 1
+            pEnd -= 1
+    def LeftRotateString(self, s, n):
+        data = ''
+        if s:
+            length = len(s)
+            if length > 0 and n > 0 and n < length:
+                data = list(s)
+                pFirstStart = 0
+                pFirstEnd = n - 1
+                pSecondStart = n
+                pSecondEnd = length - 1
+                self.Reverse(data, pFirstStart, pFirstEnd)
+                self.Reverse(data, pSecondStart, pSecondEnd)
+                self.Reverse(data, pFirstStart, pSecondEnd)
+        return ''.join(data)
 # test code
-pRoot = TreeNode(5)
-pRoot.left = TreeNode(3)
-pRoot.right = TreeNode(7)
-pRoot.left.left = TreeNode(2)
-pRoot.left.right = TreeNode(4)
-pRoot.right.left = TreeNode(6)
-pRoot.right.right = TreeNode(8)
+# pRoot = TreeNode(5)
+# pRoot.left = TreeNode(3)
+# pRoot.right = TreeNode(7)
+# pRoot.left.left = TreeNode(2)
+# pRoot.left.right = TreeNode(4)
+# pRoot.right.left = TreeNode(6)
+# pRoot.right.right = TreeNode(8)
 a = Solution()
-data = [-3,-3,1,3,5]
-print(a.TreeDepth(pRoot))
+data = "I am a student."
+print(a.ReverseSentence(data))
