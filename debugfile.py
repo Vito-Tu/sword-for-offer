@@ -9,29 +9,26 @@ class ListNode:
         self.next = None
 
 class Solution:
-    def Reverse(self,data, pBegin, pEnd):
-        if not data:
-            raise Exception("输入数据为空")
-        while pBegin < pEnd and pEnd < len(data):
-            temp = data[pBegin]
-            data[pBegin] = data[pEnd]
-            data[pEnd] = temp
-            pBegin += 1
-            pEnd -= 1
-    def LeftRotateString(self, s, n):
-        data = ''
-        if s:
-            length = len(s)
-            if length > 0 and n > 0 and n < length:
-                data = list(s)
-                pFirstStart = 0
-                pFirstEnd = n - 1
-                pSecondStart = n
-                pSecondEnd = length - 1
-                self.Reverse(data, pFirstStart, pFirstEnd)
-                self.Reverse(data, pSecondStart, pSecondEnd)
-                self.Reverse(data, pFirstStart, pSecondEnd)
-        return ''.join(data)
+    def __init__(self):
+        self.data = []
+        self.maximums = []
+        self.currentIndex = 0
+    def push_back(self, number):
+        while self.maximums and number >= self.maximums[-1][0]:
+            self.maximums.pop(-1)
+        self.data.append([number, self.currentIndex])
+        self.maximums.append([number, self.currentIndex])
+        self.currentIndex += 1
+    def pop_front(self):
+        if not self.maximums:
+            raise Exception('queue is empty')
+        if self.maximums[0][1] == self.data[0][1]:
+            self.maximums.pop(0)
+        self.data.pop(0)
+    def maxNumber(self):
+        if not self.maximums:
+            raise Exception("queue is empty")
+        return self.maximums[0][0]
 # test code
 # pRoot = TreeNode(5)
 # pRoot.left = TreeNode(3)
@@ -41,5 +38,9 @@ class Solution:
 # pRoot.right.left = TreeNode(6)
 # pRoot.right.right = TreeNode(8)
 a = Solution()
-data = "I am a student."
-print(a.ReverseSentence(data))
+data = [2,3,4,2,6,2,5,1]
+for i in data:
+    a.push_back(i)
+    print(a.maxNumber)
+    if len(a.data) >= 3:
+        a.pop_front()

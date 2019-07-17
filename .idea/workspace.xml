@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fc3f8c76-811a-4db2-ba03-70261a1f132e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.ipynb_checkpoints/python_sword_for_offer-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/.ipynb_checkpoints/python_sword_for_offer-checkpoint.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/debugfile.py" beforeDir="false" afterPath="$PROJECT_DIR$/debugfile.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/python_sword_for_offer.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/python_sword_for_offer.ipynb" afterDir="false" />
@@ -18,8 +17,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/debugfile.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="10" selection-start-line="10" selection-end-line="33" selection-end-column="28" />
+            <state relative-caret-position="719">
+              <caret line="43" selection-start-line="43" selection-end-line="43" />
             </state>
           </provider>
         </entry>
@@ -183,8 +182,8 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/debugfile.py</url>
-          <line>44</line>
-          <option name="timeStamp" value="1" />
+          <line>40</line>
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -199,8 +198,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/debugfile.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="10" selection-start-line="10" selection-end-line="33" selection-end-column="28" />
+        <state relative-caret-position="719">
+          <caret line="43" selection-start-line="43" selection-end-line="43" />
         </state>
       </provider>
     </entry>
