@@ -9,26 +9,18 @@ class ListNode:
         self.next = None
 
 class Solution:
-    def __init__(self):
-        self.data = []
-        self.maximums = []
-        self.currentIndex = 0
-    def push_back(self, number):
-        while self.maximums and number >= self.maximums[-1][0]:
-            self.maximums.pop(-1)
-        self.data.append([number, self.currentIndex])
-        self.maximums.append([number, self.currentIndex])
-        self.currentIndex += 1
-    def pop_front(self):
-        if not self.maximums:
-            raise Exception('queue is empty')
-        if self.maximums[0][1] == self.data[0][1]:
-            self.maximums.pop(0)
-        self.data.pop(0)
-    def maxNumber(self):
-        if not self.maximums:
-            raise Exception("queue is empty")
-        return self.maximums[0][0]
+    def MaxDiff(self, numbers):
+        if len(numbers) < 2:
+            return 0
+        min = numbers[0]
+        maxDiff = numbers[1] - min
+        for i in range(2, len(numbers)):
+            if numbers[i-1] < min:
+                min = numbers[i-1]
+            currentDiff = numbers[i] - min
+            if currentDiff > maxDiff:
+                maxDiff = currentDiff
+        return maxDiff
 # test code
 # pRoot = TreeNode(5)
 # pRoot.left = TreeNode(3)
@@ -38,9 +30,6 @@ class Solution:
 # pRoot.right.left = TreeNode(6)
 # pRoot.right.right = TreeNode(8)
 a = Solution()
-data = [2,3,4,2,6,2,5,1]
-for i in data:
-    a.push_back(i)
-    print(a.maxNumber)
-    if len(a.data) >= 3:
-        a.pop_front()
+data = [9,11,8,5,7,12,16,14]
+result = a.MaxDiff(data)
+print(result)
