@@ -9,18 +9,13 @@ class ListNode:
         self.next = None
 
 class Solution:
-    def MaxDiff(self, numbers):
-        if len(numbers) < 2:
-            return 0
-        min = numbers[0]
-        maxDiff = numbers[1] - min
-        for i in range(2, len(numbers)):
-            if numbers[i-1] < min:
-                min = numbers[i-1]
-            currentDiff = numbers[i] - min
-            if currentDiff > maxDiff:
-                maxDiff = currentDiff
-        return maxDiff
+    def Add(self, num1, num2):
+        while num2 != 0:
+            sum = num1 ^ num2
+            carry = (num1 & num2) << 1
+            num1 = sum
+            num2 = carry
+        return num1
 # test code
 # pRoot = TreeNode(5)
 # pRoot.left = TreeNode(3)
@@ -31,5 +26,5 @@ class Solution:
 # pRoot.right.right = TreeNode(8)
 a = Solution()
 data = [9,11,8,5,7,12,16,14]
-result = a.MaxDiff(data)
+result = a.Add(5, 17)
 print(result)
