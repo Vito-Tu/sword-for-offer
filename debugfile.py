@@ -1,55 +1,50 @@
-class TreeNode:
+class TreeLinkNode:
     def __init__(self, x):
         self.val = x
         self.left = None
         self.right = None
+        self.next = None
 class ListNode:
     def __init__(self, x):
         self.val = x
         self.next = None
 
 class Solution:
+    # 返回对应char
     def __init__(self):
-        self.g_nStatus = True
-    def StrToInt(self, s):
-        self.g_nStatus = False
-        num = 0
-        if s:
-            minus = False
-            i = 0
-            if s[i] == '+':
-                i += 1
-            elif s[i] == '-':
-                i += 1
-                minus = True
-            if i < len(s):
-                num = self.StrToIntCore(s, i, minus)
-        return int(num)
-    def StrToIntCore(self, s, i, minus):
-        num = 0
-        while i < len(s):
-            if s[i] >= '0' and s[i] <= '9':
-                flag = -1 if minus else 1
-                num = num * 10 + flag * (ord(s[i]) - ord('0'))
-                if (not minus and num > 0x7fffffff) or (minus and num < -0x80000000):
-                    num = 0
-                    break
-                i += 1
-            else:
-                num = 0
-                break
-        if i == len(s):
-            self.g_nStatus = True
-        return num
+        self.data = []
+        self.countNumber = [0]*256
+        self.once = 0
+    def FirstAppearingOnce(self):
+        if not self.data:
+            return '#'
+        return self.data[self.once] if self.once < len(self.data) else '#'
+    def Insert(self, char):
+        self.data.append(char)
+        self.countNumber[ord(char)] += 1
+        while self.once < len(self.data) and self.countNumber[ord(self.data[self.once])] != 1:
+            self.once += 1
 
 # test code
-# pRoot = TreeNode(5)
-# pRoot.left = TreeNode(3)
-# pRoot.right = TreeNode(7)
-# pRoot.left.left = TreeNode(2)
-# pRoot.left.right = TreeNode(4)
-# pRoot.right.left = TreeNode(6)
-# pRoot.right.right = TreeNode(8)
+# pRoot = TreeNode('a')
+# pRoot.children.append(TreeNode('b'))
+# pRoot.children.append(TreeNode('c'))
+# temp = pRoot.children[0]
+# temp.children.append(TreeNode('d'))
+# temp.children.append(TreeNode('e'))
+# temp = temp.children[0]
+# temp.children.append(TreeNode('f'))
+# temp.children.append(TreeNode('g'))
+# temp = pRoot.children[0].children[1]
+# temp.children.append(TreeNode('h'))
+# temp.children.append(TreeNode('i'))
+# temp.children.append(TreeNode('j'))
 a = Solution()
-data = [9,11,8,5,7,12,16,14]
-print(a.StrToInt('-123'))
+data = 'google'
+for i in range(len(data)):
+    print('before insert the first appearing once char is ')
+    print(a.FirstAppearingOnce())
+    a.Insert(data[i])
+    print('before insert the first appearing once char is ')
+    print(a.FirstAppearingOnce())
+    print('\n')
