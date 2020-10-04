@@ -4,7 +4,7 @@
 
 推荐使用jupyter插件
 
-安装方法：'pip install jupyter_contrib_nbextensions && jupyter contrib nbextension install'
+安装方法：`pip install jupyter_contrib_nbextensions && jupyter contrib nbextension install`
 启动jupyter Notebook 导航至新的Nbextensions选项卡，如下图：
 ![Nbextensions选项卡](./nbextension.png)
 为方便查看代码，推荐勾选图中的插件
